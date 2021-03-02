@@ -58,6 +58,8 @@ void MainWindow::on_writeButton_clicked()
     globalSettings .EffectGains[7] = ui->sawtoothDownSlider_1->value();
     globalSettings .EffectGains[8] = ui->springSlider_1->value();
 
+    globalSettings.EncoderCPR = ui->encoderSpinBox->value();
+
     globalSettings .MechanicalCenter = ui->mechanicalCenterSpinBox->value();
 
     memcpy(buffer+2,&globalSettings,sizeof(GlobalSettingsTypeDef));
@@ -93,6 +95,8 @@ void MainWindow::on_readButton_clicked()
     ui->sawtoothUpSlider_1->setValue(globalSettings .EffectGains[6]);
     ui->sawtoothDownSlider_1->setValue(globalSettings .EffectGains[7]);
     ui->springSlider_1->setValue(globalSettings .EffectGains[8]);
+
+    ui->encoderSpinBox->setValue(globalSettings.EncoderCPR);
 
     ui->mechanicalCenterSpinBox->setValue(globalSettings .MechanicalCenter);
 }
