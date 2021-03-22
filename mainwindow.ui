@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>375</width>
-    <height>616</height>
+    <height>579</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -66,13 +66,6 @@
         </item>
         <item>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="1" column="1">
-           <widget class="QSlider" name="steeringSmoothingSlider_1">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_27">
             <property name="text">
@@ -80,20 +73,16 @@
             </property>
            </widget>
           </item>
-          <item row="9" column="0">
-           <widget class="QLabel" name="label_15">
-            <property name="text">
-             <string>Triangle</string>
-            </property>
-           </widget>
-          </item>
-          <item row="11" column="2">
-           <widget class="QSpinBox" name="sawtoothDownSpinner_1">
+          <item row="4" column="1">
+           <widget class="QSlider" name="constantViaSineSlider_1">
             <property name="minimum">
              <number>-100</number>
             </property>
             <property name="maximum">
              <number>100</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
            </widget>
           </item>
@@ -110,15 +99,28 @@
             </property>
            </widget>
           </item>
-          <item row="5" column="0">
-           <widget class="QLabel" name="label_26">
-            <property name="text">
-             <string>Constant</string>
+          <item row="8" column="2">
+           <widget class="QSpinBox" name="sineSpinner_1">
+            <property name="minimum">
+             <number>-100</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
             </property>
            </widget>
           </item>
-          <item row="11" column="1">
-           <widget class="QSlider" name="sawtoothDownSlider_1">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_23">
+            <property name="text">
+             <string>Steering range</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QSpinBox" name="torqueSmoothingSpinner_1"/>
+          </item>
+          <item row="12" column="1">
+           <widget class="QSlider" name="springSlider_1">
             <property name="minimum">
              <number>-100</number>
             </property>
@@ -130,8 +132,18 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
-           <widget class="QSlider" name="torqueGainSlider_1">
+          <item row="7" column="2">
+           <widget class="QSpinBox" name="squareSpinner_1">
+            <property name="minimum">
+             <number>-100</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="1">
+           <widget class="QSlider" name="sawtoothDownSlider_1">
             <property name="minimum">
              <number>-100</number>
             </property>
@@ -153,69 +165,12 @@
             </property>
            </widget>
           </item>
-          <item row="7" column="1">
-           <widget class="QSlider" name="squareSlider_1">
-            <property name="minimum">
-             <number>-100</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="2">
-           <widget class="QSpinBox" name="rampSpinner_1">
-            <property name="minimum">
-             <number>-100</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="2">
-           <widget class="QSpinBox" name="squareSpinner_1">
-            <property name="minimum">
-             <number>-100</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="label_21">
-            <property name="text">
-             <string>Torque smoothing</string>
-            </property>
-           </widget>
-          </item>
           <item row="8" column="0">
            <widget class="QLabel" name="label_22">
             <property name="text">
              <string>Sine</string>
             </property>
            </widget>
-          </item>
-          <item row="6" column="0">
-           <widget class="QLabel" name="label_17">
-            <property name="text">
-             <string>Ramp</string>
-            </property>
-           </widget>
-          </item>
-          <item row="11" column="0">
-           <widget class="QLabel" name="label_20">
-            <property name="text">
-             <string>Sawtooth down</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="2">
-           <widget class="QSpinBox" name="torqueSmoothingSpinner_1"/>
           </item>
           <item row="5" column="1">
            <widget class="QSlider" name="constantSlider_1">
@@ -230,10 +185,83 @@
             </property>
            </widget>
           </item>
-          <item row="7" column="0">
-           <widget class="QLabel" name="label_18">
+          <item row="1" column="2">
+           <widget class="QSpinBox" name="steeringSmoothingSpinner_1"/>
+          </item>
+          <item row="10" column="2">
+           <widget class="QSpinBox" name="sawtoothUpSpinner_1">
+            <property name="minimum">
+             <number>-100</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSlider" name="torqueGainSlider_1">
+            <property name="minimum">
+             <number>-100</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="label_15">
             <property name="text">
-             <string>Square</string>
+             <string>Triangle</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QSlider" name="sineSlider_1">
+            <property name="minimum">
+             <number>-100</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="label_17">
+            <property name="text">
+             <string>Ramp</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="2">
+           <widget class="QSpinBox" name="triangleSpinner_1">
+            <property name="minimum">
+             <number>-100</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="2">
+           <widget class="QSpinBox" name="rampSpinner_1">
+            <property name="minimum">
+             <number>-100</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="0">
+           <widget class="QLabel" name="label_16">
+            <property name="text">
+             <string>Sawtooth up</string>
             </property>
            </widget>
           </item>
@@ -270,8 +298,42 @@
             </property>
            </widget>
           </item>
-          <item row="8" column="1">
-           <widget class="QSlider" name="sineSlider_1">
+          <item row="12" column="2">
+           <widget class="QSpinBox" name="springSpinner_1">
+            <property name="minimum">
+             <number>-100</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSlider" name="steeringSmoothingSlider_1">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="2">
+           <widget class="QSpinBox" name="sawtoothDownSpinner_1">
+            <property name="minimum">
+             <number>-100</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="label_18">
+            <property name="text">
+             <string>Square</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="QSlider" name="triangleSlider_1">
             <property name="minimum">
              <number>-100</number>
             </property>
@@ -280,6 +342,74 @@
             </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QSlider" name="torqueSmoothingSlider_1">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_26">
+            <property name="text">
+             <string>Constant</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QSpinBox" name="steeringRangeSpinner_1">
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="singleStep">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QSlider" name="squareSlider_1">
+            <property name="minimum">
+             <number>-100</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="12" column="0">
+           <widget class="QLabel" name="label_28">
+            <property name="text">
+             <string>Spring</string>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="0">
+           <widget class="QLabel" name="label_20">
+            <property name="text">
+             <string>Sawtooth down</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_21">
+            <property name="text">
+             <string>Torque smoothing</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="QSpinBox" name="constantSpinner_1">
+            <property name="minimum">
+             <number>-100</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
             </property>
            </widget>
           </item>
@@ -300,197 +430,7 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_23">
-            <property name="text">
-             <string>Steering range</string>
-            </property>
-           </widget>
-          </item>
-          <item row="12" column="0">
-           <widget class="QLabel" name="label_28">
-            <property name="text">
-             <string>Spring</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="2">
-           <widget class="QSpinBox" name="constantSpinner_1">
-            <property name="minimum">
-             <number>-100</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QSlider" name="constantViaSineSlider_1">
-            <property name="minimum">
-             <number>-100</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="QSlider" name="torqueSmoothingSlider_1">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="9" column="1">
-           <widget class="QSlider" name="triangleSlider_1">
-            <property name="minimum">
-             <number>-100</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="12" column="2">
-           <widget class="QSpinBox" name="springSpinner_1">
-            <property name="minimum">
-             <number>-100</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QSpinBox" name="steeringSmoothingSpinner_1"/>
-          </item>
-          <item row="10" column="2">
-           <widget class="QSpinBox" name="sawtoothUpSpinner_1">
-            <property name="minimum">
-             <number>-100</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-           </widget>
-          </item>
-          <item row="12" column="1">
-           <widget class="QSlider" name="springSlider_1">
-            <property name="minimum">
-             <number>-100</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2">
-           <widget class="QSpinBox" name="steeringRangeSpinner_1">
-            <property name="maximum">
-             <number>1000</number>
-            </property>
-            <property name="singleStep">
-             <number>10</number>
-            </property>
-           </widget>
-          </item>
-          <item row="9" column="2">
-           <widget class="QSpinBox" name="triangleSpinner_1">
-            <property name="minimum">
-             <number>-100</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-           </widget>
-          </item>
-          <item row="10" column="0">
-           <widget class="QLabel" name="label_16">
-            <property name="text">
-             <string>Sawtooth up</string>
-            </property>
-           </widget>
-          </item>
-          <item row="8" column="2">
-           <widget class="QSpinBox" name="sineSpinner_1">
-            <property name="minimum">
-             <number>-100</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-           </widget>
-          </item>
-          <item row="13" column="0">
-           <widget class="QLabel" name="label">
-            <property name="text">
-             <string>Center</string>
-            </property>
-           </widget>
-          </item>
-          <item row="13" column="1">
-           <widget class="QPushButton" name="mechanicalCenterSetButton">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="text">
-             <string>Set to current position</string>
-            </property>
-           </widget>
-          </item>
-          <item row="13" column="2">
-           <widget class="QSpinBox" name="mechanicalCenterSpinBox">
-            <property name="maximum">
-             <number>99999</number>
-            </property>
-            <property name="singleStep">
-             <number>10</number>
-            </property>
-           </widget>
-          </item>
          </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout"/>
-        </item>
-        <item>
-         <widget class="QPushButton" name="readButton">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="text">
-           <string>Read from controller</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="writeButton">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="text">
-           <string>Wright to controller</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="saveSettingsButton">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="text">
-           <string>Save</string>
-          </property>
-         </widget>
         </item>
        </layout>
       </widget>
@@ -502,7 +442,7 @@
         <item>
          <widget class="QCheckBox" name="checkBoenableSystemSettingsCheckBox">
           <property name="text">
-           <string>Enable electrical curve calibration</string>
+           <string>Enable advanced settings</string>
           </property>
          </widget>
         </item>
@@ -543,7 +483,34 @@
             </property>
            </widget>
           </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="mechanicalCenterSpinBox">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="maximum">
+             <number>99999</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Mechanical center</string>
+            </property>
+           </widget>
+          </item>
          </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="mechanicalCenterSetButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Set mechanical center to current position</string>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QPushButton" name="calibrateElectricalCenterButton">
@@ -580,6 +547,36 @@
         </item>
        </layout>
       </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="readButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Read from controller</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="writeButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Wright to controller</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="saveSettingsButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
      </widget>
     </item>
    </layout>
@@ -808,7 +805,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>352</x>
-     <y>121</y>
+     <y>176</y>
     </hint>
    </hints>
   </connection>
@@ -1031,8 +1028,8 @@
      <y>52</y>
     </hint>
     <hint type="destinationlabel">
-     <x>172</x>
-     <y>150</y>
+     <x>183</x>
+     <y>205</y>
     </hint>
    </hints>
   </connection>
@@ -1049,6 +1046,54 @@
     <hint type="destinationlabel">
      <x>121</x>
      <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBoenableSystemSettingsCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>mechanicalCenterSpinBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>125</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBoenableSystemSettingsCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>mechanicalCenterSetButton</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>36</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>86</x>
+     <y>134</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBoenableSystemSettingsCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>mechanicalCenterSetButton</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>104</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>109</x>
+     <y>138</y>
     </hint>
    </hints>
   </connection>

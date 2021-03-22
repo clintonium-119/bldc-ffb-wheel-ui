@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
     if(device){
         ui->readButton->setEnabled(true);
         ui->writeButton->setEnabled(true);
-        ui->mechanicalCenterSetButton->setEnabled(true);
+        ui->saveSettingsButton->setEnabled(true);
         on_readButton_clicked();
     }
 }
