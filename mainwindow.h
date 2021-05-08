@@ -16,7 +16,6 @@ typedef struct __attribute__((packed)) {
     int8_t Direction;                       // -1/+1. Stands if positive direction of rotation corresponds to increasing encoder values
     uint16_t MechanicalCenter;               // Offset from encoder Z index to mechanical center in encoder ticks.
     uint16_t EncoderCPR;
-    uint16_t CalibrationMagnitude;
 } GlobalSettingsTypeDef;
 
 
@@ -39,10 +38,6 @@ private slots:
     void on_readButton_clicked();
 
     void on_calibrateElectricalCenterButton_clicked();
-
-    void on_saveSettingsButton_clicked();
-
-    void on_saveAdvancedSettingsButton_clicked();
 
     void on_mechanicalCenterSetButton_clicked();
 
